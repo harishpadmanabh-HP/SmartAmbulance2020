@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activuity.Paediatrician"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/chaithanya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text=" Chaithanya Eye Hospital"/>
+    <TextView
+        android:id="@+id/cosmopolitan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:text=" Cosmopolitan Hospital"/>
+    <TextView
+        android:id="@+id/kerf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text=" KERF ENT Speciality Hospital"/>
+</LinearLayout>

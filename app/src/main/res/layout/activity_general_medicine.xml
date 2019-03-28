@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activuity.Paediatrician"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/nirmala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text="Nirmala Hospital"/>
+    <TextView
+        android:id="@+id/credencee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_margin="10dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text="Credence Hospital"
+        />
+    <TextView
+        android:id="@+id/sasikala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text=" Sasikala Poly Clinic"/>
+    <TextView
+        android:id="@+id/sct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:text=" SCT Institute for Medical Sciences"/>
+    <TextView
+        android:id="@+id/prs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text=" PRS"/>
+    <TextView
+        android:id="@+id/sut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:text=" SUT Royal Hospital"/>
+
+    <TextView
+        android:id="@+id/meditrina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text=" Meditrina Hospital"/>
+    <TextView
+        android:id="@+id/kerala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:text=" Kerala Institute of Medical Sciences"/>
+
+    <TextView
+        android:id="@+id/gg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:text=" GG Hospital"/>
+    <TextView
+        android:id="@+id/medical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text=" Medical College"/>
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activuity.Paediatrician"
+    android:orientation="vertical"
+    android:gravity="center">
+<TextView
+    android:id="@+id/aarjav"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="18dp"
+    android:textColor="#000"
+    android:textStyle="bold"
+    android:text="Aarjav Paediatric Clinic"/>
+    <TextView
+        android:id="@+id/credence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_margin="10dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text="Credence Hospital"/>
+    <TextView
+        android:id="@+id/sat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text=" SAT Paediatrics Casualty"/>
+    <TextView
+        android:id="@+id/rr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:text=" R R Childrens Hospital"/>
+</LinearLayout>
