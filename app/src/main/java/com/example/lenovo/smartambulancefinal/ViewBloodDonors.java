@@ -108,7 +108,7 @@ public class ViewBloodDonors extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        String number=phonelist.get(position);
+                        String number=phonelist.get(position).substring(13);
                         SmsManager smsManager = SmsManager.getDefault();
                         smsManager.sendTextMessage(number, null, "Urgent requirement for blood from the sender of this sms. Please contact back .", null, null);
 

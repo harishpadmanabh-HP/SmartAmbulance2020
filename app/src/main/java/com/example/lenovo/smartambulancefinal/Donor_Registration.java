@@ -45,14 +45,14 @@ public class Donor_Registration extends AppCompatActivity {
         signup=findViewById(R.id.btn_signup);
         blood = findViewById(R.id.input_blood);
         list = new ArrayList<String>();
-        list.add("O+ve");
-        list.add("O-ve");
-        list.add("A+ve");
-        list.add("A-ve");
-        list.add("B+ve");
-        list.add("B-ve");
-        list.add("AB+ve");
-        list.add("AB-ve");
+        list.add("O positive");
+        list.add("O negative");
+        list.add("A positive");
+        list.add("A negative");
+        list.add("B positive");
+        list.add("B negative");
+        list.add("AB positive");
+        list.add("AB negative");
         client=new AsyncHttpClient();
         params=new RequestParams();
 
@@ -70,32 +70,32 @@ public class Donor_Registration extends AppCompatActivity {
                 switch(arg2) {
 
                     case 0 :
-                        blood.setText("O+ve");
+                        blood.setText("O positive");
 
                     break;
                     case 1 :
-                        blood.setText("O-ve");
+                        blood.setText("O negative");
 
                         break;
                     case 2 :
-                        blood.setText("A+ve");
+                        blood.setText("A positive");
 
                         break;
                     case 3 :
-                        blood.setText("A-ve");
+                        blood.setText("A negative");
 
                         break;
                     case 4:
-                        blood.setText("B+ve");
+                        blood.setText("B positive");
                         break;
                     case  5:
-                        blood.setText("B-ve");
+                        blood.setText("B negative");
                         break;
                     case 6:
-                        blood.setText("AB+ve");
+                        blood.setText("AB positive");
                         break;
                     case 7:
-                        blood.setText("AB-ve");
+                        blood.setText("AB negative");
                         break;
                 }
             }
@@ -129,10 +129,10 @@ public class Donor_Registration extends AppCompatActivity {
 
 
                 else {
-
+                       bgroup=blood.getText().toString();
                     params.put("name", name.getEditText().getText().toString());
                     params.put("age", age.getEditText().getText().toString());
-                    params.put("group", bgroup);
+                    params.put("blood",bgroup);
                     params.put("phone", phone.getEditText().getText().toString());
                     params.put("address", address.getEditText().getText().toString());
 

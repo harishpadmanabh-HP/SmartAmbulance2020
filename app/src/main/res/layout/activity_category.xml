@@ -31,8 +31,8 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundpurple"
-                        android:src="@drawable/hospital"
+                        android:background="@drawable/cerclebackgroundskyblue"
+                        android:src="@mipmap/hospital"
                         android:padding="10dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -59,8 +59,8 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundpink"
-                        android:src="@drawable/ambulance"
+                        android:background="@drawable/cerclebackgroundyello"
+                        android:src="@mipmap/ent"
                         android:padding="10dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -97,9 +97,9 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundpurple"
+                        android:background="@drawable/cerclebackgroundgreen"
                         android:padding="10dp"
-                        android:src="@drawable/hospital" />
+                        android:src="@mipmap/pediatric" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -127,7 +127,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:background="@drawable/cerclebackgroundpink"
-                        android:src="@drawable/ambulance"
+                        android:src="@mipmap/physio"
                         android:padding="10dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -164,7 +164,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:background="@drawable/cerclebackgroundpurple"
-                        android:src="@drawable/hospital"
+                        android:src="@mipmap/neuro"
                         android:padding="10dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -191,8 +191,8 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundpink"
-                        android:src="@drawable/ambulance"
+                        android:background="@drawable/cerclebackgroundyello"
+                        android:src="@mipmap/cardio"
                         android:padding="10dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -227,7 +227,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:background="@drawable/cerclebackgroundpurple"
-                        android:src="@drawable/hospital"
+                        android:src="@mipmap/hospital"
                         android:padding="10dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -255,7 +255,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:background="@drawable/cerclebackgroundpink"
-                        android:src="@drawable/ambulance"
+                        android:src="@mipmap/ambulance"
                         android:padding="10dp"/>
                     <TextView
                         android:layout_width="wrap_content"
