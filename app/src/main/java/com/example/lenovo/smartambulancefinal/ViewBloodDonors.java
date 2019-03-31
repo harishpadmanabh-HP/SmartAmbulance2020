@@ -1,12 +1,16 @@
 package com.example.lenovo.smartambulancefinal;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -94,6 +98,44 @@ public class ViewBloodDonors extends AppCompatActivity {
                 }
             }
         });
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+
+                AlertDialog.Builder AB = new AlertDialog.Builder(ViewBloodDonors.this);
+                AB.setMessage("Contact blood donar ? The Donar will get an sms with yor requirement").setCancelable(false).setPositiveButton("SEND SMS ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        String number=phonelist.get(position);
+                        SmsManager smsManager = SmsManager.getDefault();
+                        smsManager.sendTextMessage(number, null, "Urgent requirement for blood from the sender of this sms. Please contact back .", null, null);
+
+
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog A = AB.create();
+                A.setTitle("EXIT SCREEN");
+                A.show();
+
+
+
+
+
+
+
+                     }
+        });
+
+
+
+
     }
 
     class adapter extends BaseAdapter {
