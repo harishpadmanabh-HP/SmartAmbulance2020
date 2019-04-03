@@ -14,11 +14,13 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -44,6 +46,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         pushclient=new AsyncHttpClient();
         Params=new RequestParams();
         pushparam=new RequestParams();
+
+//        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//        SmsManager smsManager = SmsManager.getDefault();
+//        smsManager.sendTextMessage("9188138688", null, refreshedToken, null, null);
+
 
 
 
@@ -136,7 +143,14 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
     public void Alerted(View view) {
 
-     getLocation();
+
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Toast.makeText(getApplicationContext(), ""+refreshedToken, Toast.LENGTH_SHORT).show();
+//        SmsManager smsManager = SmsManager.getDefault();
+//        smsManager.sendTextMessage("7012069385", null, refreshedToken, null, null);
+
+
+        getLocation();
 
 
 

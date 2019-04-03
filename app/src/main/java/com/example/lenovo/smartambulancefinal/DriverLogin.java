@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -61,6 +62,7 @@ public class DriverLogin extends AppCompatActivity {
                             obj1=new JSONObject(content);
 
                             String s=obj1.getString("status");
+                           // String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
                             Toast.makeText(DriverLogin.this, ""+s,
                                     Toast.LENGTH_SHORT).show();
@@ -78,8 +80,10 @@ public class DriverLogin extends AppCompatActivity {
 
                                 ed.commit();
 
-                                Intent i=new Intent(DriverLogin.this,DriverHome.class);
-                                startActivity(i);
+//                                Intent i=new Intent(DriverLogin.this,DriverHome.class);
+//                                startActivity(i);
+
+                                Toast.makeText(DriverLogin.this, "You have signed in . You will be notified when an accident is reported ", Toast.LENGTH_SHORT).show();
 
 
                             }
