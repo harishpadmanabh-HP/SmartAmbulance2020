@@ -1,6 +1,7 @@
 package com.example.lenovo.smartambulancefinal;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -8,6 +9,11 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.provider.Settings;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -17,6 +23,7 @@ import android.support.v7.widget.CardView;
 import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     String locurl="http://srishti-systems.info/projects/smartambulance/location.php?";
     AsyncHttpClient asyncHttpClient,pushclient;
     RequestParams Params,pushparam;
+    boolean GpsStatus ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,8 +152,96 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     public void Alerted(View view) {
 
 
+//....................CHECK INTERNET
+
+        ConnectivityManager cm =
+                (ConnectivityManager)getApplication().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+
+        if(isConnected==false)
+        {
+            // Toast.makeText(getApplicationContext(), "Please check your internet connection !", Toast.LENGTH_SHORT).show();
+
+            System.out.println("internet false");
+        }
+        else
+        {
+            System.out.println("INTERNET STATUS TRUE "+isConnected);
+        }
+
+//...................CHECK INTERET ENDS
+        //.............................GPS STATUS
+
+        CheckGpsStatus() ;
+
+//        if(GpsStatus == true)
+//        {
+//            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();        }
+//        else {
+//            Toast.makeText(this, "Please enable location services.", Toast.LENGTH_SHORT).show();
+
+//
+//            AlertDialog.Builder AB = new AlertDialog.Builder(MainActivity.this);
+//            AB.setMessage("You need to enable your GPS to get the accurate location of your reported accident.").setCancelable(false).setPositiveButton("TURN ON GPS From Settings", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//
+//                   // turnGPSOn();
+//                    dialog.cancel();
+//
+//
+//                }
+//            }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    dialog.cancel();
+//                }
+//            });
+//            AlertDialog A = AB.create();
+//            A.setTitle("ALERT !!!");
+//            A.show();
+//
+//
+//
+//
+//
+//
+
+
+
+       // }
+
+        //............................GPD STATUS ENDS
+
+
+        if(isConnected==false&&GpsStatus==true)
+        {
+            LinearLayout linearLayout=findViewById(R.id.ll);
+            Snackbar snackbar = Snackbar
+                    .make(linearLayout, "Check your internet connection", Snackbar.LENGTH_LONG);
+            snackbar.show();        }
+        else if(isConnected==true&&GpsStatus==false)
+        {
+            LinearLayout linearLayout=findViewById(R.id.ll);
+            Snackbar snackbar = Snackbar
+                    .make(linearLayout, "Enable location services", Snackbar.LENGTH_LONG);
+            snackbar.show();        }
+        else if(isConnected==false&&GpsStatus==false)
+        {
+            LinearLayout linearLayout=findViewById(R.id.ll);
+            Snackbar snackbar = Snackbar
+                    .make(linearLayout, "Check your internet connection and enable location services", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+
+
+
+
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        Toast.makeText(getApplicationContext(), ""+refreshedToken, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), ""+refreshedToken, Toast.LENGTH_SHORT).show();
 //        SmsManager smsManager = SmsManager.getDefault();
 //        smsManager.sendTextMessage("7012069385", null, refreshedToken, null, null);
 
@@ -264,5 +360,36 @@ Double logdouble=location.getLongitude();
     public void onProviderDisabled(String provider) {
         Toast.makeText(MainActivity.this, "Please Enable GPS and Internet", Toast.LENGTH_SHORT).show();
 
+    }
+
+    public void CheckGpsStatus(){
+
+        locationManager = (LocationManager)getApplication().getSystemService(Context.LOCATION_SERVICE);
+
+        GpsStatus = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+    }
+
+    private void turnGPSOn(){
+        String provider = Settings.Secure.getString(getContentResolver(), Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
+
+        if(!provider.contains("gps")){ //if gps is disabled
+            final Intent poke = new Intent();
+            poke.setClassName("com.android.settings", "com.android.settings.widget.SettingsAppWidgetProvider");
+            poke.addCategory(Intent.CATEGORY_ALTERNATIVE);
+            poke.setData(Uri.parse("3"));
+            sendBroadcast(poke);
+        }
+    }
+
+    private void turnGPSOff(){
+        String provider = Settings.Secure.getString(getContentResolver(), Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
+
+        if(provider.contains("gps")){ //if gps is enabled
+            final Intent poke = new Intent();
+            poke.setClassName("com.android.settings", "com.android.settings.widget.SettingsAppWidgetProvider");
+            poke.addCategory(Intent.CATEGORY_ALTERNATIVE);
+            poke.setData(Uri.parse("3"));
+            sendBroadcast(poke);
+        }
     }
 }
