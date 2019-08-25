@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
+<ScrollView
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp"
-        android:background="#ededed"
+        android:background="#FFFCFC"
         android:gravity="center"
         android:id="@+id/ll">
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:translationZ="10dp"
+            app:cardCornerRadius="30dp"
             android:layout_width="340dp"
             android:layout_height="250dp"
             android:layout_margin="10dp">
@@ -61,6 +65,8 @@
             <android.support.v7.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
+                android:translationZ="10dp"
+                app:cardCornerRadius="30dp"
                 android:onClick="hospitalclick"
                 android:id="@+id/hospitalcardid"
                 android:layout_width="160dp"
@@ -94,6 +100,8 @@
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:onClick="driverclick"
+                android:translationZ="10dp"
+                app:cardCornerRadius="30dp"
                 android:layout_margin="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -130,6 +138,8 @@
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
+                android:translationZ="10dp"
+                app:cardCornerRadius="30dp"
                 android:onClick="donorclick">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -159,6 +169,8 @@
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
+                android:translationZ="10dp"
+                app:cardCornerRadius="30dp"
                 android:onClick="bookop">
 
                 <LinearLayout

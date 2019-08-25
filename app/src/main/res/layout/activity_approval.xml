@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Registered Name"
+            android:inputType="textPersonName"
             android:textColorHint="#d10606"
             android:textColor="#000"
             />
@@ -42,6 +43,7 @@
             android:layout_height="wrap_content"
             android:hint="Registered Phone number"
             android:textColorHint="#d10606"
+            android:inputType="phone"
             android:textColor="#000"
             />
     </android.support.design.widget.TextInputLayout>
@@ -52,6 +54,7 @@
         android:background="#d10606"
         android:textColor="#fff"
         android:text="ACCEPT RESCUE"
+        android:clickable="true"
         android:textSize="18dp"
         android:textStyle="italic"
         android:layout_marginTop="20dp"

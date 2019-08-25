@@ -21,7 +21,7 @@
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:hint=" Name"
             android:inputType="textPersonName"
-            android:textColor="#cccccc"
+            android:textColor="#9C27B0"
             android:textSize="20sp" />
     </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputLayout
@@ -35,10 +35,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#ffff"
-            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:drawableLeft="@drawable/ic_mail_black_24dp"
             android:hint="   Email"
-            android:inputType="textPersonName"
-            android:textColor="#cccccc"
+            android:inputType="textEmailAddress"
+            android:textColor="#9C27B0"
             android:textSize="20sp" />
     </android.support.design.widget.TextInputLayout>
 
