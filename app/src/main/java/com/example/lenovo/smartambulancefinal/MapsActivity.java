@@ -25,7 +25,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     AsyncHttpClient client;
     RequestParams params;
 
-    String locresponse,latresponse,longresponse;
+    String locresponse,latresponse,longresponse,accidentid,status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +61,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject obj = jsonArray.getJSONObject(i);
 
+                            accidentid=obj.getString("id");
                             latresponse=obj.getString("lat");
                             longresponse=obj.getString("log");
                             locresponse=obj.getString("location");
-
+                            status=obj.getString("status");
 
                             double lat=Double.parseDouble(latresponse);
                             double log=Double.parseDouble(longresponse);
+
+                            System.out.println("LAT"+String.valueOf(lat));
+                            System.out.println("LAT"+String.valueOf(log));
+
 
 
                             // Add a marker in Sydney and move the camera

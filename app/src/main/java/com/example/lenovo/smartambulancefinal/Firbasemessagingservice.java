@@ -110,6 +110,17 @@ public class Firbasemessagingservice extends FirebaseMessagingService {
 // Get the PendingIntent containing the entire back stack
         PendingIntent resultPendingIntent =
                 stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+
+//intent for accept button
+
+        // Create an Intent for the activity you want to start
+        Intent aprove = new Intent(this, ApprovalActivity.class);
+// Create the TaskStackBuilder and add the intent, which inflates the back stack
+        TaskStackBuilder astackBuilder = TaskStackBuilder.create(this);
+        astackBuilder.addNextIntentWithParentStack(aprove);
+// Get the PendingIntent containing the entire back stack
+        PendingIntent approvepending =
+                astackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
         Bitmap icon = BitmapFactory.decodeResource(getApplicationContext().getResources(),
                 R.drawable.accident);
         notification
@@ -117,7 +128,7 @@ public class Firbasemessagingservice extends FirebaseMessagingService {
                 .setContentTitle("Accident Spotted")
 //                .setContentText(remoteMessage.getData().toString())
                 .setContentText(callNumber)
-                .addAction(R.drawable.accident,"ACCEPT",resultPendingIntent)
+                .addAction(R.drawable.accident,"ACCEPT",approvepending)
                 .setContentIntent(resultPendingIntent)
                 .setNumber(3); // this shows a number in the notification dots
 

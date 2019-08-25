@@ -80,10 +80,10 @@ public class DriverLogin extends AppCompatActivity {
 
                                 ed.commit();
 
-//                                Intent i=new Intent(DriverLogin.this,DriverHome.class);
-//                                startActivity(i);
+                                Intent i=new Intent(DriverLogin.this,DriverHome.class);
+                                startActivity(i);
 
-                                Toast.makeText(DriverLogin.this, "You have signed in . You will be notified when an accident is reported ", Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(DriverLogin.this, "You have signed in . You will be notified when an accident is reported ", Toast.LENGTH_SHORT).show();
 
 
                             }

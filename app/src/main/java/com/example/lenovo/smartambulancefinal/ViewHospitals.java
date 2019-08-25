@@ -2,14 +2,17 @@ package com.example.lenovo.smartambulancefinal;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -65,15 +68,15 @@ public class ViewHospitals extends AppCompatActivity {
                         for(int i=0;i<jarray.length();i++){
                             JSONObject jobj=jarray.getJSONObject(i);
                             String nam=jobj.getString("name");
-                            hospnamelist.add("Name :"+nam);
+                            hospnamelist.add(""+nam);
                             String num=jobj.getString("contact");
-                            hospnumberlist.add("Number :" +num);
+                            hospnumberlist.add("" +num);
                             String mail=jobj.getString("mail");
-                            maillist.add("Email :"+mail);
+                            maillist.add(""+mail);
                             String add=jobj.getString("address");
-                            addlist.add("Address :"+add);
+                            addlist.add(""+add);
                             String city=jobj.getString("city");
-                            citylist.add("City :"+city);
+                            citylist.add(""+city);
 
 
 
@@ -90,6 +93,16 @@ public class ViewHospitals extends AppCompatActivity {
                 }
             }
         });
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ViewCompat.setElevation(parent,130);
+                Toast.makeText(ViewHospitals.this, "clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
     class adapter extends BaseAdapter {
@@ -113,7 +126,7 @@ public class ViewHospitals extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             inflate=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView=inflate.inflate(R.layout.lviewhospxml,null);
-            TextView name=convertView.findViewById(R.id.hospnamexml);
+            final TextView name=convertView.findViewById(R.id.hospnamexml);
             name.setText(hospnamelist.get(position));
             TextView number=convertView.findViewById(R.id.hospnumberxml);
             number.setText(hospnumberlist.get(position));
@@ -123,6 +136,14 @@ public class ViewHospitals extends AppCompatActivity {
             address.setText(addlist.get(position));
             TextView cityy=convertView.findViewById(R.id.hospcityxml);
             cityy.setText(citylist.get(position));
+
+            name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    ViewCompat.setElevation(name,100);
+                }
+            });
 
             return convertView;
         }

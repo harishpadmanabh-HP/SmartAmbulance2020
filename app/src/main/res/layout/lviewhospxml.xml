@@ -7,27 +7,37 @@
     android:orientation="vertical"
     android:layout_height="wrap_content">
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#fff"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
 
 
     <TextView
         android:id="@+id/hospnamexml"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-
-        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_marginTop="5dp"
+android:text="zzzzzzzzzzzzzzzzzzzzzzzz"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20dp" />
 
 
     <TextView
+        android:text="zzzzzzzzzzzzzzzzzzzzzzzz"
+
         android:id="@+id/hospnumberxml"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -35,16 +45,18 @@
         android:layout_alignParentRight="true"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:textColor="#000"
-        android:textSize="20dp" />
+        android:textSize="18dp" />
 
     <TextView
+        android:text="zzzzzzzzzzzzzzzzzzzzzzzz"
+
         android:id="@+id/hospmailxml"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -52,15 +64,17 @@
         android:layout_alignParentRight="true"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:textColor="#000"
-        android:textSize="20dp" />
+        android:textSize="18dp" />
     <TextView
+        android:text="zzzzzzzzzzzzzzzzzzzzzzzz"
+
         android:id="@+id/hospaddxml"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -68,15 +82,17 @@
         android:layout_alignParentRight="true"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:textColor="#000"
-        android:textSize="20dp" />
+        android:textSize="18dp" />
     <TextView
+        android:text="zzzzzzzzzzzzzzzzzzzzzzzz"
+
         android:id="@+id/hospcityxml"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -84,10 +100,15 @@
         android:layout_alignParentRight="true"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:textColor="#000"
-        android:textSize="20dp" />
+        android:textSize="18dp" />
 
+        </LinearLayout>
+
+
+
+    </android.support.v7.widget.CardView>
 </LinearLayout>

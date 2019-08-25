@@ -21,6 +21,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -55,9 +56,13 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         Params=new RequestParams();
         pushparam=new RequestParams();
 
-//        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 //        SmsManager smsManager = SmsManager.getDefault();
 //        smsManager.sendTextMessage("9188138688", null, refreshedToken, null, null);
+
+        Toast.makeText(this, "FirebaseInstanceId"+FirebaseInstanceId.getInstance().getToken(), Toast.LENGTH_SHORT).show();
+        Log.e("TOKENREF",FirebaseInstanceId.getInstance().getToken());
+        System.out.println("Token"+refreshedToken);
 
 
 
@@ -74,31 +79,33 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     }
 
     public void hospitalclick(View view) {
-        LayoutInflater inflat=LayoutInflater.from(MainActivity.this);
-        View cuslay=inflat.inflate(R.layout.hospitalalert,null);
+//        LayoutInflater inflat=LayoutInflater.from(MainActivity.this);
+//        View cuslay=inflat.inflate(R.layout.hospitalalert,null);
+//
+//        CardView cview=cuslay.findViewById(R.id.card1);
+//        TextView tview=cuslay.findViewById(R.id.hreg);
+//        TextView viewhosp=cuslay.findViewById(R.id.hview);
+//        AlertDialog.Builder AB=new AlertDialog.Builder(MainActivity.this);
+//        AB.setView(cuslay);
+//        final AlertDialog A=AB.create();
+//        A.show();
+//        tview.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i=new Intent(MainActivity.this,HospitalRegistration.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        viewhosp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent k=new Intent(MainActivity.this,ViewHospitals.class);
+//                startActivity(k);
+//            }
+//        });
 
-        CardView cview=cuslay.findViewById(R.id.card1);
-        TextView tview=cuslay.findViewById(R.id.hreg);
-        TextView viewhosp=cuslay.findViewById(R.id.hview);
-        AlertDialog.Builder AB=new AlertDialog.Builder(MainActivity.this);
-        AB.setView(cuslay);
-        final AlertDialog A=AB.create();
-        A.show();
-        tview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(MainActivity.this,HospitalRegistration.class);
-                startActivity(i);
-            }
-        });
-
-        viewhosp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent k=new Intent(MainActivity.this,ViewHospitals.class);
-                startActivity(k);
-            }
-        });
+        startActivity(new Intent(getApplicationContext(),ViewHospitals.class));
 
     }
 
