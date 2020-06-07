@@ -21,15 +21,17 @@ public class DriverLogin extends AppCompatActivity {
     AsyncHttpClient client;
     RequestParams params;
     JSONObject obj1;
-   TextInputLayout userphone,passp;
+    TextInputLayout userphone,passp;
     Button loginbtn,signup;
     String url="http://srishti-systems.info/projects/smartambulance/login.php?";
+    private String refreshedToken;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_login);
+         refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
         client=new AsyncHttpClient();
         params=new RequestParams();
@@ -46,6 +48,7 @@ public class DriverLogin extends AppCompatActivity {
 
                 params.put("phone",userphone.getEditText().getText().toString());
                 params.put("password",passp.getEditText().getText().toString());
+                params.put("device_id",refreshedToken);
 
                 client.get(url,params,new AsyncHttpResponseHandler()
                 {

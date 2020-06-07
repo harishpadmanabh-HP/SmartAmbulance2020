@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "342182119387",
+    "firebase_url": "https://ambulance-831b4.firebaseio.com",
+    "project_id": "ambulance-831b4",
+    "storage_bucket": "ambulance-831b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342182119387:android:7095a8d6a3c994d89849fe",
+        "android_client_info": {
+          "package_name": "com.example.lenovo.smartambulancefinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342182119387-pe25drvat2gea942he3vlg5633fl1jto.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBynEvSH7nFVuyRJFg1IWH9X9LYyOvr2H8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342182119387-pe25drvat2gea942he3vlg5633fl1jto.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

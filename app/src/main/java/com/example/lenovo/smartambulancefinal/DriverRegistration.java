@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -23,11 +24,16 @@ public class DriverRegistration extends AppCompatActivity {
     RequestParams params;
     JSONObject object;
     String url="http://srishti-systems.info/projects/smartambulance/reg.php?";
+    private String refreshedToken;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_registration);
 //
+
+        refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
         name=findViewById(R.id.name);
         phone=findViewById(R.id.phone);
         license=findViewById(R.id.licenseno);
@@ -71,6 +77,8 @@ public class DriverRegistration extends AppCompatActivity {
                     params.put("phone", phone.getText().toString());
                     params.put("license", license.getText().toString());
                     params.put("password", password.getText().toString());
+                    params.put("device_id",refreshedToken);
+
 
 
                     client.get(url, params, new AsyncHttpResponseHandler() {
@@ -92,6 +100,8 @@ public class DriverRegistration extends AppCompatActivity {
                                 }
 
                             } catch (Exception e) {
+
+                                Toast.makeText(DriverRegistration.this, ""+e, Toast.LENGTH_SHORT).show();
 
                             }
 

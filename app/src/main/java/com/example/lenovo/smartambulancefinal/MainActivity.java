@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 //        SmsManager smsManager = SmsManager.getDefault();
 //        smsManager.sendTextMessage("9188138688", null, refreshedToken, null, null);
 
-        Toast.makeText(this, "FirebaseInstanceId"+FirebaseInstanceId.getInstance().getToken(), Toast.LENGTH_SHORT).show();
-        Log.e("TOKENREF",FirebaseInstanceId.getInstance().getToken());
-        System.out.println("Token"+refreshedToken);
+//        Toast.makeText(this, "FirebaseInstanceId"+FirebaseInstanceId.getInstance().getToken(), Toast.LENGTH_SHORT).show();
+//        Log.e("TOKENREF",FirebaseInstanceId.getInstance().getToken());
+//        System.out.println("Token"+refreshedToken);
 
 
 
@@ -292,6 +292,7 @@ Double logdouble=location.getLongitude();
             Params.put("lat",latstring);
             Params.put("log",longstring);
             Params.put("location",locadd);
+            Log.e("Loc Params",Params.toString());
             asyncHttpClient.get(locurl,Params,new AsyncHttpResponseHandler(){
                 @Override
                 public void onSuccess(String content) {
@@ -331,6 +332,8 @@ Double logdouble=location.getLongitude();
 
                         JSONObject jo=new JSONObject(content);
 
+                        Log.e("PUSH REsPOnse",jo.toString());
+
                         String sn=jo.getString("success");
 
                         Toast.makeText(MainActivity.this, "Notification has ben delivered to "+sn+" Ambulance drivers.", Toast.LENGTH_SHORT).show();
@@ -349,7 +352,7 @@ Double logdouble=location.getLongitude();
 
         }catch(Exception e)
         {
-
+            Toast.makeText(getApplicationContext(), ""+e, Toast.LENGTH_SHORT).show();
         }
     }
 
